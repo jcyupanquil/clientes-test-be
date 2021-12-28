@@ -4,6 +4,10 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.css.springboot.backend.apirest.models.dao.IFacturaDAO;
+import com.css.springboot.backend.apirest.models.dao.IProductoDAO;
+import com.css.springboot.backend.apirest.models.entity.Factura;
+import com.css.springboot.backend.apirest.models.entity.Producto;
 import com.css.springboot.backend.apirest.models.entity.Region;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,6 +23,12 @@ public class ClienteServiceImpl implements IClienteService {
 
     @Resource
     private IClienteDAO clienteDAO;
+
+    @Resource
+    private IFacturaDAO facturaDAO;
+
+    @Resource
+    private IProductoDAO productoDAO;
 
     @Override
     @Transactional(readOnly = true)
@@ -52,6 +62,33 @@ public class ClienteServiceImpl implements IClienteService {
     @Override
     public List<Region> findAllRegiones() {
         return clienteDAO.findAllRegiones();
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Factura findFacturaById(Long id)
+    {
+        return facturaDAO.findById(id).orElse(null);
+    }
+
+    @Transactional
+    @Override
+    public Factura saveFactura(Factura factura)
+    {
+        return facturaDAO.save(factura);
+    }
+
+    @Transactional
+    @Override
+    public void deleteFacturaById(Long id)
+    {
+        facturaDAO.deleteById(id);
+    }
+
+    @Override
+    public List<Producto> findProductosByName(String filter)
+    {
+        return productoDAO.findByNombreContainingIgnoreCase(filter);
     }
 
 }
