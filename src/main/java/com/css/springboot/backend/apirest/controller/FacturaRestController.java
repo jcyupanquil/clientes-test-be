@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * @author Juan Carlos Yupanqui
  */
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200", "*"})
 @RestController
 @RequestMapping("/api")
 public class FacturaRestController

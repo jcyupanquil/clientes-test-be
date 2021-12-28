@@ -1,12 +1,12 @@
 
-INSERT INTO public.region(nombre) VALUES ('Sudam√©rica');
-INSERT INTO public.region(nombre) VALUES ('Centroam√©rica');
-INSERT INTO public.region(nombre) VALUES ('Norteam√©rica');
+INSERT INTO public.region(nombre) VALUES ('SudamÈrica');
+INSERT INTO public.region(nombre) VALUES ('CentroamÈrica');
+INSERT INTO public.region(nombre) VALUES ('NorteamÈrica');
 INSERT INTO public.region(nombre) VALUES ('Europa');
 INSERT INTO public.region(nombre) VALUES ('Asia');
-INSERT INTO public.region(nombre) VALUES ('√Åfrica');
-INSERT INTO public.region(nombre) VALUES ('Ocean√≠a');
-INSERT INTO public.region(nombre) VALUES ('Ant√°rtida');
+INSERT INTO public.region(nombre) VALUES ('¡frica');
+INSERT INTO public.region(nombre) VALUES ('OceanÌa');
+INSERT INTO public.region(nombre) VALUES ('Ant·rtida');
 
 INSERT INTO public.cliente(region_id, apellido, fecha_creacion, email, nombre) VALUES(1, 'Yupanqui Lozano', '2020-12-18 13:09:10.749', 'asdfas@as.com', 'Juan Carlos');
 INSERT INTO public.cliente(region_id, apellido, fecha_creacion, email, nombre) VALUES(2, 'apellido2', '2020-12-18 13:09:12.448', 'aasdfsdfas@as.com', 'nombre2');
